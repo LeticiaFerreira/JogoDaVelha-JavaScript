@@ -48,12 +48,26 @@ let newGame = (result, winner, arr) => {
     if(result === 1) {
         for(col of arr) {
             cols[col].style.border = '4px solid rgb(183, 185, 197)';
-            cols[col].style.backgroundColor = 'rgb(37, 35, 35)'
+            cols[col].style.backgroundColor = 'rgb(37, 35, 35)';
+        }
+        msg.innerHTML = 'VITORIA <button>Jogar novamente</button>';
+        msg.style.display = 'flex';
+        if(winner === 'square') {
+        msg.style.backgroundColor = 'var(--mainRed)';
+        } else {
+            msg.style.backgroundColor = 'var(--mainBlue)';
         }
     }else {
         console.log('velha');
     }
+    const button = document.querySelector('.msg button');
+    button.onclick = () => {
+        status = true;
+        msg.style.display = 'none';
+        msg.innerHTML = '';
+    }  
 }
+
 
 let play = () => {
     
