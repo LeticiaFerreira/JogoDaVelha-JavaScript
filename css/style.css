@@ -2,6 +2,7 @@
     --bgColor: rgb(29, 29, 29);
     --mainBlue: rgb(15, 131, 226);
 }
+
 body {
     margin: 0;
     font-family: 'Quattrocento Sans', sans-serif;
@@ -96,6 +97,7 @@ main {
     justify-content: center;
     cursor: pointer;
     transition: all ease-in 0.2s;
+    font-size: 30px;
 }
 
 .all:hover {
