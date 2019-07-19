@@ -1,32 +1,40 @@
 let status = true;
 const cols = document.querySelectorAll('.all');
-console.log(cols);
+let winner;
 
 let check = () => {
     if((cols[0].innerHTML != '') && (cols[1].innerHTML != '') && (cols[2].innerHTML != '')
     && (cols[0].innerHTML == cols[1].innerHTML) && (cols[1].innerHTML == cols[2].innerHTML)) {
-        newGame(1);
+        winner = cols[0].childNodes[0].className;
+        newGame(1, winner);
     } else if((cols[3].innerHTML != '') && (cols[4].innerHTML != '') && (cols[5].innerHTML != '')
     && (cols[3].innerHTML == cols[4].innerHTML) && (cols[4].innerHTML == cols[5].innerHTML)) {
-        newGame(1);
+        winner = cols[3].childNodes[0].className;
+        newGame(1, winner);
     } else if((cols[6].innerHTML != '') && (cols[7].innerHTML != '') && (cols[8].innerHTML != '')
     && (cols[6].innerHTML == cols[7].innerHTML) && (cols[7].innerHTML == cols[8].innerHTML)) {
-        newGame(1);
+        winner = cols[6].childNodes[0].className;
+        newGame(1, winner);
     } else if((cols[0].innerHTML != '') && (cols[3].innerHTML != '') && (cols[6].innerHTML != '')
     && (cols[0].innerHTML == cols[3].innerHTML) && (cols[3].innerHTML == cols[6].innerHTML)) {
-        newGame(1);
+        winner = cols[0].childNodes[0].className;
+        newGame(1, winner);
     } else if((cols[1].innerHTML != '') && (cols[4].innerHTML != '') && (cols[7].innerHTML != '')
     && (cols[1].innerHTML == cols[4].innerHTML) && (cols[4].innerHTML == cols[7].innerHTML)) {
-        newGame(1);
+        winner = cols[1].childNodes[0].className;
+        newGame(1, winner);
     } else if((cols[2].innerHTML != '') && (cols[5].innerHTML != '') && (cols[8].innerHTML != '')
     && (cols[2].innerHTML == cols[5].innerHTML) && (cols[5].innerHTML == cols[8].innerHTML)) {
-        newGame(1);
+        winner = cols[2].childNodes[0].className;
+        newGame(1, winner);
     } else if((cols[0].innerHTML != '') && (cols[4].innerHTML != '') && (cols[8].innerHTML != '')
     && (cols[0].innerHTML == cols[4].innerHTML) && (cols[4].innerHTML == cols[8].innerHTML)) {
-        newGame(1);
+        winner = cols[0].childNodes[0].className;
+        newGame(1, winner);
     } else if((cols[2].innerHTML != '') && (cols[4].innerHTML != '') && (cols[6].innerHTML != '')
     && (cols[2].innerHTML == cols[4].innerHTML) && (cols[4].innerHTML == cols[6].innerHTML)) {
-        newGame(1);
+        winner = cols[2].childNodes[0].className;
+        newGame(1, winner);
     } else if((cols[0].innerHTML != '') && (cols[1].innerHTML != '') && (cols[2].innerHTML != '') 
     && (cols[3].innerHTML != '') && (cols[4].innerHTML != '') && (cols[5].innerHTML != '') 
     && (cols[6].innerHTML != '') && (cols[7].innerHTML != '') && (cols[8].innerHTML != '')){
@@ -34,10 +42,10 @@ let check = () => {
     }
 } 
 
-let newGame = (result) => {
+let newGame = (result, winner) => {
     status = false;
     if(result === 1) {
-        console.log('vitoria');
+        console.log('vitoria de ' + winner);
     }else {
         console.log('velha');
     }
