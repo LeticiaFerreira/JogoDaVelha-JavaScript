@@ -47,9 +47,7 @@ let newGame = (result, winner, arr) => {
     status = false;
     if(result === 1) {
         for(col of arr) {
-            cols[col].className += ' win';
-            
-            
+            cols[col].className += ' win';   
         }
         msg.innerHTML = 'VITORIA <button>Jogar novamente</button>';
         msg.style.display = 'flex';
@@ -59,7 +57,10 @@ let newGame = (result, winner, arr) => {
             msg.style.backgroundColor = 'var(--mainBlue)';
         }
     }else {
-        console.log('velha');
+        msg.innerHTML = '#VELHA# <button>Jogar novamente</button>';
+        msg.style.display = 'flex';
+        msg.style.backgroundColor = 'rgba(49, 49, 49, 0.8)';
+        msg.style.color = '#eee';
     }
     const button = document.querySelector('.msg button');
     button.onclick = () => {
@@ -73,7 +74,6 @@ let newGame = (result, winner, arr) => {
     }  
 }
 
-
 let play = () => {
     
     for(let i = 0; i < cols.length; i++) {
@@ -85,7 +85,7 @@ let play = () => {
             if(status === true) {
                 let div = `<div class="${start}"></div>`;
                 if(col.innerHTML) {
-                    console.log('sai fora cara');
+                    console.log('quadrado já selecionado');
                 }else {
                     if(this.start == 'circle') {
                         this.start = 'square';
@@ -95,7 +95,6 @@ let play = () => {
                     col.innerHTML = div;
                 }
                 check();
-                console.log(status);
             }
             
         }
