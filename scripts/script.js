@@ -47,8 +47,9 @@ let newGame = (result, winner, arr) => {
     status = false;
     if(result === 1) {
         for(col of arr) {
-            cols[col].style.border = '4px solid rgb(183, 185, 197)';
-            cols[col].style.backgroundColor = 'rgb(37, 35, 35)';
+            cols[col].className += ' win';
+            
+            
         }
         msg.innerHTML = 'VITORIA <button>Jogar novamente</button>';
         msg.style.display = 'flex';
@@ -65,6 +66,10 @@ let newGame = (result, winner, arr) => {
         status = true;
         msg.style.display = 'none';
         msg.innerHTML = '';
+        for(col of cols) {
+            col.innerHTML = '';
+            col.classList.remove("win");
+        }
     }  
 }
 
