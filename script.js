@@ -49,7 +49,7 @@ let newGame = (result, winner, arr) => {
         for(col of arr) {
             cols[col].className += ' win';   
         }
-        msg.innerHTML = 'VITORIA <button>Jogar novamente</button>';
+        msg.innerHTML = 'VITÓRIA <button>Jogar novamente</button>';
         msg.style.display = 'flex';
         if(winner === 'square') {
         msg.style.backgroundColor = 'var(--mainRed)';
